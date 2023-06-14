@@ -1,4 +1,60 @@
 {
     "name": "Cellbit",
-    "user-profile": "https://static-cdn.jtvnw.net/jtv_user_pictures/0595cdd0-65a7-4fa3-996d-323cf3a54be1-profile_image-70x70.png"
+    "user-profile": "https://static-cdn.jtvnw.net/jtv_user_pictures/0595cdd0-65a7-4fa3-996d-323cf3a54be1-profile_image-70x70.png",
+    "playlists": {
+        "SIMULACRA": [
+            {
+                "title": "SIMULACRA",
+                "url": "https://youtu.be/-X07uzTbJcw",
+                "thumb": "https://img.youtube.com/vi/-X07uzTbJcw/hqdefault.jpg"
+            },
+            {
+                "title": "SIMULACRA 2",
+                "url": "https://youtu.be/g5s-iOuXUzM",
+                "thumb": "https://img.youtube.com/vi/g5s-iOuXUzM/hqdefault.jpg"
+            },
+            {
+                "title": "SIMULACRA 3",
+                "url": "https://youtu.be/3brDSaPFryw",
+                "thumb": "https://img.youtube.com/vi/3brDSaPFryw/hqdefault.jpg"
+            },
+            {
+                "title": "SIMULACRA 4",
+                "url": "https://youtu.be/BGFlLFDcSW8",
+                "thumb": "https://img.youtube.com/vi/BGFlLFDcSW8/hqdefault.jpg"
+            },
+            {
+                "title": "SIMULACRA 5",
+                "url": "https://youtu.be/Dih6mf1e0-Q",
+                "thumb": "https://img.youtube.com/vi/Dih6mf1e0-Q/hqdefault.jpg"
+            },
+            {
+                "title": "OS SEGREDOS DE SIMULACRA (+todos os finais)",
+                "url": "https://youtu.be/KGDeLafqkFU",
+                "thumb": "https://img.youtube.com/vi/KGDeLafqkFU/hqdefault.jpg"
+            }
+        ],
+        "NAO ACREDITE NAS MENTIRAS DELE": [
+            {
+                "title": "NAO ACREDITEM NAS MENTIRAS DELE",
+                "url": "https://youtu.be/VIbjjDtQVhQ",
+                "thumb": "https://img.youtube.com/vi/VIbjjDtQVhQ/hqdefault.jpg"
+            },
+            {
+                "title": "EU NÃO CONSIGO DORMIR E VOCÊ SABE O MOTIVO",
+                "url": "https://youtu.be/aRwOyV-0ZjI",
+                "thumb": "https://img.youtube.com/vi/aRwOyV-0ZjI/hqdefault.jpg"
+            },
+            {
+                "title": "NUNCA MAIS VOU DORMIR",
+                "url": "https://youtu.be/NtgmkZTqNBI",
+                "thumb": "https://img.youtube.com/vi/NtgmkZTqNBI/hqdefault.jpg"
+            },
+            {
+                "title": "ESSE ENIGMA VAI ME DESTRUIR",
+                "url": "https://youtu.be/S_ZQIYMibLA",
+                "thumb": "https://img.youtube.com/vi/S_ZQIYMibLA/hqdefault.jpg"
+            }
+        ]
+    }
 }

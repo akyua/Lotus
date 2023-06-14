@@ -1,36 +1,91 @@
 import config from "../config.json";
+import styled from "styled-components";
+import {CSSReset} from "../src/components/CSSReset";
 
+const StyledBody = styled.div`
+    background-color: #222222;
+`;
 export default function Page() {
-    const background = {backgroundColor: "red"};
     return (
-        <div style={background}>Welcome to Lotus!;
-            <Menu />
-            <Header />
-            <Timeline />
-        </div> 
+        <>
+        <CSSReset />
+            <StyledBody>;
+                <Menu />
+                <Header />
+                <Timeline playlists={config.playlists} />
+            </StyledBody> 
+        </>
     );
   }
 
  export function Menu(){
     return(
-        <div>
-            Menu
-        </div>
+        <section className="menu">
+            <img></img>
+            <a href="">Vods</a>
+            <input type="search"></input>
+            <img className="menu-profile"></img>
+        </section>
     );
 }
 
+const StyledHeader = styled.div`
+    img{
+        
+    }
+    div{
+        display: flex;
+        flex-direction: row;
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        h2{
+            font-size: 32px;
+            color: white;
+            font-weight: 400;
+        }
+    }
+`
 export function Header(){
     return(
-        <div>
+        <StyledHeader>
             <img src="banner" />
-            <img src={config["user-profile"]} />
-            {config.name}
-        </div>
+            <div>
+                <img src={config["user-profile"]} />
+                <h2>{config.name}</h2>
+            </div>
+        </StyledHeader>
     );
 }
 
-export function Timeline(){
+export function Timeline(props){
+    const playlistNames = Object.keys(props.playlists)
     return(
-        <div>Timeline</div>
+        <div>
+            {playlistNames.map((playlistName) => {
+                const videos = props.playlists[playlistName];
+                console.log(playlistName);
+                console.log(videos);
+                return (
+                    <section>
+                        <h2>{playlistName}</h2>
+                        <div>
+                            {videos.map((video) => {
+                                return (
+                                    <a href={video.url}>
+                                        <img src={video.thumb} />
+                                        <span>
+                                            {video.title}
+                                        </span>
+                                    </a>
+                                )
+                            })}
+                        </div>
+                    </section>
+                )
+            })}
+        </div>
     );
 }
