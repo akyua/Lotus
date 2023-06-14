@@ -12,10 +12,11 @@ Not available yet.
 
 ## Technologies Used
   
-  ![Javascript](https://img.shields.io/badge/-Javascript-yellow?style=for-the-badge)
-  ![React](https://img.shields.io/badge/-React-blue?style=for-the-badge)
-  ![NextJS](https://img.shields.io/badge/-NextJS-white?style=for-the-badge)
-  ![Styled-Components](https://img.shields.io/badge/-StyledComponents-pink?style=for-the-badge)
+  ![Javascript](https://img.shields.io/badge/-Javascript-black?style=for-the-badge&logo=javascript)
+  ![React](https://img.shields.io/badge/-React-black?style=for-the-badge&logo=react)
+  ![NextJS](https://img.shields.io/badge/-NextJS-black?style=for-the-badge&logo=next.js)
+  ![Styled-Components](https://img.shields.io/badge/-Styled_Components-black?style=for-the-badge&logo=styled-components)
+
   
 ## Pictures of the Project
 
