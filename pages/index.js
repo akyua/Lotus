@@ -1,24 +1,36 @@
 import config from "../config.json";
 import styled from "styled-components";
 import {CSSReset} from "../src/components/CSSReset";
+import Menu from "../src/components/Menu";
+import { StyledTimeline } from "../src/components/Timeline";
 
 const StyledBody = styled.div`
-    background-color: #222222;
+    display: "flex";
+    flex-direction: "column";
+    flex: 1;
 `;
+
+const StyledMain = styled.main`
+    display: "flex";
+    flex-direction: "column";
+    flex: 1;
+`
 export default function Page() {
     return (
         <>
         <CSSReset />
-            <StyledBody>;
+            <StyledBody>
                 <Menu />
+                <StyledMain>
                 <Header />
                 <Timeline playlists={config.playlists} />
-            </StyledBody> 
+                </StyledMain>
+            </StyledBody>
         </>
     );
   }
 
- export function Menu(){
+/*  export function Menu(){
     return(
         <section className="menu">
             <img></img>
@@ -27,9 +39,10 @@ export default function Page() {
             <img className="menu-profile"></img>
         </section>
     );
-}
+} */
 
 const StyledHeader = styled.div`
+    margin-top: 50px;
     img{
         
     }
@@ -63,7 +76,7 @@ export function Header(){
 export function Timeline(props){
     const playlistNames = Object.keys(props.playlists)
     return(
-        <div>
+        <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = props.playlists[playlistName];
                 console.log(playlistName);
@@ -86,6 +99,6 @@ export function Timeline(props){
                     </section>
                 )
             })}
-        </div>
+        </StyledTimeline>
     );
 }
