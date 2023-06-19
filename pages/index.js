@@ -43,8 +43,9 @@ export default function Page() {
 
 const StyledHeader = styled.div`
     margin-top: 50px;
-    img{
-        
+    .banner{
+        width: 100%;
+        height: 200px;
     }
     div{
         display: flex;
@@ -56,7 +57,6 @@ const StyledHeader = styled.div`
         }
         h2{
             font-size: 32px;
-            color: white;
             font-weight: 400;
         }
     }
@@ -64,7 +64,7 @@ const StyledHeader = styled.div`
 export function Header(){
     return(
         <StyledHeader>
-            <img src="banner" />
+            <img src={`${config.banner}`} className="banner" />
             <div>
                 <img src={config["user-profile"]} />
                 <h2>{config.name}</h2>
