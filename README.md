@@ -2,7 +2,7 @@
 
 The project is a unique platform/website designed to showcase YouTube videos in a distinctive and stylized manner, functioning as a portfolio of videos with a customized and visually appealing design. Its primary objective is to provide users with an enhanced video-watching experience by offering a diverse collection of carefully curated videos that cater to different interests and preferences. Users will have the ability to explore some categories, search for specific videos.
 
-[![licence mit](https://img.shields.io/badge/licence-MIT-blue.svg?style=for-the-badge&labelColor=000)](https://img.shields.io/github/license/akyua/lotus)
+[![license mit](https://img.shields.io/badge/licence-MIT-blue.svg?style=for-the-badge&labelColor=000)](https://img.shields.io/github/license/akyua/lotus)
 
 ## Dependencies
   
@@ -13,7 +13,7 @@ The project is a unique platform/website designed to showcase YouTube videos in 
   
 ## See website on live
 
-Not available yet.
+https://lotus-akyua.vercel.app/
 
 ## Technologies Used
   
