@@ -1,3 +1,4 @@
+import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
 import {CSSReset} from "../src/components/CSSReset";
@@ -16,14 +17,16 @@ const StyledMain = styled.main`
     flex: 1;
 `
 export default function Page() {
+    const [filterValue, setFilterValue] = React.useState("");
+
     return (
         <>
         <CSSReset />
             <StyledBody>
-                <Menu />
+                <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
                 <StyledMain>
                 <Header />
-                <Timeline playlists={config.playlists} />
+                <Timeline searchValue={filterValue} playlists={config.playlists} />
                 </StyledMain>
             </StyledBody>
         </>
@@ -73,21 +76,25 @@ export function Header(){
     );
 }
 
-export function Timeline(props){
+export function Timeline({searchValue, ...props}){
     const playlistNames = Object.keys(props.playlists)
     return(
         <StyledTimeline>
             {playlistNames.map((playlistName) => {
                 const videos = props.playlists[playlistName];
-                console.log(playlistName);
-                console.log(videos);
+                /* console.log(playlistName);
+                console.log(videos); */
                 return (
-                    <section>
+                    <section key={playlistName}>
                         <h2>{playlistName}</h2>
                         <div>
-                            {videos.map((video) => {
+                            {videos.filter((video) => {
+                                const titleNormalized = video.title.toLowerCase();
+                                const searchValueNormalized = searchValue.toLowerCase();
+                                return titleNormalized.includes(searchValueNormalized)
+                            }).map((video) => {
                                 return (
-                                    <a href={video.url}>
+                                    <a key={video.url} href={video.url}>
                                         <img src={video.thumb} />
                                         <span>
                                             {video.title}
