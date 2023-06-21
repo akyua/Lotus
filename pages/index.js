@@ -1,7 +1,6 @@
 import React from "react";
 import config from "../config.json";
 import styled from "styled-components";
-import {CSSReset} from "../src/components/CSSReset";
 import Menu from "../src/components/Menu";
 import { StyledTimeline } from "../src/components/Timeline";
 
@@ -21,7 +20,6 @@ export default function Page() {
 
     return (
         <>
-        <CSSReset />
             <StyledBody>
                 <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
                 <StyledMain>
@@ -45,6 +43,7 @@ export default function Page() {
 } */
 
 const StyledHeader = styled.div`
+    background-color: ${({ theme }) => theme.backgroundLevel1 };
     margin-top: 50px;
     .banner{
         width: 100%;
@@ -53,12 +52,15 @@ const StyledHeader = styled.div`
     div{
         display: flex;
         flex-direction: row;
+        padding: 10px;
+        gap: 10px;
         img{
             width: 80px;
             height: 80px;
             border-radius: 50%;
         }
         h2{
+            margin-top: 5px;
             font-size: 32px;
             font-weight: 400;
         }
