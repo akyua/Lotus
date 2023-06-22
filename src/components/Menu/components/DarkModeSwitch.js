@@ -42,9 +42,8 @@ export default function DarkModeSwitch() {
   return (
     <StyledSwitch>
       <input id="darkmode" type="checkbox" onChange={() => {
-        console.log("Mudou o state");
-        if(context.mode === "dark") context.setMode("light")
-        if(context.mode === "light") context.setMode("dark")
+        context.toggleMode();
+        
       }} />
       <label
         htmlFor="darkmode"
