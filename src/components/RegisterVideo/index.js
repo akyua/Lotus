@@ -1,10 +1,32 @@
 import React from "react";
 import { StyledRegisterVideo } from "./styles";
 
-export default function RegisterVideo() {
-    const [showForm, setShowForm]= React.useState(false);
-    const [values, setValues] = React.useState({title: "", url: ""});
+function useForm(propsForm){
+    const [values, setValues] = React.useState(propsForm.initialValues);
+    return {
+        values,
+        handleChange:
+            (event) => {
+                const value = event.target.value;
+                const name = event.target.name;
+                console.log(value);
+                setValues({
+                    ...values,
+                    [name]: value,
+                });
+            },
+        clearForm() {
+            setValues({});
+        } 
+        
+    };
+}
 
+export default function RegisterVideo() {
+    const formRegister = useForm({
+        initialValues: { title: "SIMULACRA", url:"https://youtube.com"}
+    });
+    const [showForm, setShowForm]= React.useState(false);
     return (
     <StyledRegisterVideo>
         <button className="add-video" onClick={() => {setShowForm(true)}}>
@@ -14,34 +36,24 @@ export default function RegisterVideo() {
             ? (
             <form onSubmit={(event) => {
                 event.preventDefault();
+                setShowForm(false);
+                formRegister.clearForm();
             }}>
                 <div>
-                    <button className="close-modal" onClick={() => {setShowForm(false)}}>
+                    <button type="button" className="close-modal" onClick={() => {setShowForm(false)}}>
                         X
                     </button>
                     <input 
                     placeholder="Video title" 
-                    value={values.title} 
-                    onChange={(event) => {
-                        const value = event.target.value;
-                        console.log(value);
-                        setValues({
-                            ...values,
-                            title: value,
-                        });
-                    }} 
+                    name="title"
+                    value={formRegister.values.title} 
+                    onChange={formRegister.handleChange} 
                     />
                     <input 
                     placeholder="URL" 
-                    value={values.url}
-                    onChange={(event) => {
-                        const value = event.target.value;
-                        console.log(value);
-                        setValues({
-                            ...values,
-                            url: value,
-                        });
-                    }}  
+                    name="url"
+                    value={formRegister.values.url}
+                    onChange={formRegister.handleChange} 
                     />
                     <button type="submit">
                         Submit
